@@ -1,0 +1,31 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  background: transparent;
+}
+
+body {
+  background-color: #424242;
+  height: 100vh;
+  padding: 100px 20px;
+}
+
+.Logo {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .Logo-body {
+  }
+
+  .Logo-eyes {
+    position: absolute;
+    left: 0; right: 0; bottom: 20px;
+    display: flex;
+    justify-content: center;
+  }
+}
