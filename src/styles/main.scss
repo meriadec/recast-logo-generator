@@ -5,16 +5,21 @@
   font: inherit;
   color: inherit;
   background: transparent;
+  outline: none;
+  border: none;
 }
 
 body {
   background-color: #424242;
-  height: 100vh;
-  padding: 100px 20px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .Logo {
   position: relative;
+  margin: 60px 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -27,5 +32,25 @@ body {
     left: 0; right: 0; bottom: 20px;
     display: flex;
     justify-content: center;
+  }
+}
+
+.controls {
+  background: rgba(black, 0.2);
+  padding: 20px;
+
+  > * + * {
+    margin-top: 20px;
+  }
+}
+
+input[type=text] {
+  background: rgba(black, 0.3);
+  color: rgba(white, 0.5);
+  text-transform: uppercase;
+  padding: 10px;
+  border: 1px solid;
+
+  &:focus {
   }
 }
