@@ -7,7 +7,9 @@
     "preview": "npm run build && npm run prod",
     "prod": "NODE_ENV=production npm start",
     "start": "node bin/start",
-    "lint": "eslint src webpack bin"
+    "lint": "eslint src webpack bin",
+    "pm2:setup": "pm2 deploy ecosystem.json production setup",
+    "deploy": "pm2 deploy ecosystem.json production"
   },
   "babel": {
     "presets": [
@@ -73,6 +75,7 @@
     "extract-text-webpack-plugin": "^2.0.0-beta",
     "ignore-styles": "^5.0.1",
     "node-sass": "^3.13.0",
+    "pm2": "^2.2.3",
     "progress-bar-webpack-plugin": "^1.9.0",
     "sass-loader": "^4.0.2",
     "style-loader": "^0.13.1",
