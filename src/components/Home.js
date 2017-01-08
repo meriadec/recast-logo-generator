@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Slider from 'react-slider'
 import cl from 'color'
 import { HuePicker } from 'react-color'
 import { Saturation } from 'react-color/lib/components/common'
@@ -10,6 +11,7 @@ class Home extends Component {
   state = {
     color: '#ffca2b',
     inputValue: '#ffca2b',
+    fat: 1,
   }
 
   handleChangeInput (e) {
@@ -55,11 +57,16 @@ class Home extends Component {
     })
   }
 
+  handleChangeSize (v) {
+    this.setState({ fat: v })
+  }
+
   render () {
 
     const {
       color,
       inputValue,
+      fat,
     } = this.state
 
     const c = cl(color)
@@ -91,6 +98,7 @@ class Home extends Component {
 
         <Logo
           color={color}
+          fat={fat}
         />
 
         <div className='controls'>
@@ -117,6 +125,17 @@ class Home extends Component {
             }}
             onChange={::this.handleChangeInput}
           />
+
+          <Slider
+            className='horizontal-slider'
+            min={0.5}
+            max={1.5}
+            defaultValue={1}
+            withBars
+            onChange={::this.handleChangeSize}
+            step={0.01}
+          />
+
         </div>
 
       </div>

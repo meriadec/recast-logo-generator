@@ -10,6 +10,7 @@ class Logo extends Component {
 
     const {
       color,
+      fat,
     } = this.props
 
     const c = cl(color)
@@ -23,7 +24,7 @@ class Logo extends Component {
         <div
           className='Logo-body'
           style={{
-            transform: 'scaleX(0.6)',
+            transform: `scaleX(${fat})`,
           }}
         >
           <LogoBody
