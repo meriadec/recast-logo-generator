@@ -10,11 +10,15 @@
 }
 
 body {
-  background-color: #424242;
+}
+
+.Home {
+  min-height: 100vh;
   padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  // transition: 100ms linear background-color;
 }
 
 .Logo {
@@ -50,7 +54,5 @@ input[type=text] {
   text-transform: uppercase;
   padding: 10px;
   border: 1px solid;
-
-  &:focus {
-  }
+  width: 100%;
 }

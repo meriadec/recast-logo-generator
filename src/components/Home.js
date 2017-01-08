@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import {
-  HuePicker,
-} from 'react-color'
+import cl from 'color'
+import { HuePicker } from 'react-color'
+import { Saturation } from 'react-color/lib/components/common'
 
 import Logo from 'components/Logo'
 
@@ -9,6 +9,27 @@ class Home extends Component {
 
   state = {
     color: '#ffca2b',
+    inputValue: '#ffca2b',
+  }
+
+  handleChangeInput (e) {
+    let { value } = e.target
+
+    if (value && value[0] !== '#') {
+      value = `#${value}`
+    }
+
+    try {
+      const c = cl(e.target.value)
+      this.setState({
+        inputValue: value,
+        color: c.hex(),
+      })
+    } catch (err) {
+      this.setState({
+        inputValue: value,
+      })
+    }
   }
 
   handleChangeHue (color) {
@@ -20,35 +41,81 @@ class Home extends Component {
 
     this.setState({
       color: hex,
+      inputValue: hex,
     })
 
+  }
+
+  handleChangeHSV (color) {
+    const c = cl(this.state.color).hsv(color.h, color.s, color.v)
+    const hex = c.hex()
+    this.setState({
+      color: hex,
+      inputValue: hex,
+    })
   }
 
   render () {
 
     const {
       color,
+      inputValue,
     } = this.state
 
+    const c = cl(color)
+    const hsv = c.hsv().color
+    const hsl = c.hsl().color
+
+    const saturationColor = {
+      hsv: {
+        h: hsv[0] / 100,
+        s: hsv[1] / 100,
+        v: hsv[2] / 100,
+      },
+      hsl: {
+        h: hsl[0],
+        s: hsl[1],
+        l: hsl[2],
+      },
+    }
+
+    const isLight = c.light()
+
     return (
-      <div>
+      <div
+        className='Home'
+        style={{
+          backgroundColor: isLight ? '#424242' : '#bbb',
+        }}
+      >
 
         <Logo
           color={color}
         />
 
         <div className='controls'>
+          <div
+            style={{
+              position: 'relative',
+              height: 200,
+            }}
+          >
+            <Saturation
+              {...saturationColor}
+              onChange={::this.handleChangeHSV}
+            />
+          </div>
           <HuePicker
             color={color}
             onChange={::this.handleChangeHue}
           />
           <input
             type='text'
-            value={color}
+            value={inputValue}
             style={{
               borderColor: color,
-              color,
             }}
+            onChange={::this.handleChangeInput}
           />
         </div>
 

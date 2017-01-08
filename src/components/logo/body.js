@@ -1,32 +1,17 @@
 import React from 'react'
+import cl from 'color'
 
 export default (props) => {
 
   const {
     style,
     headColor,
+    reflectColor,
   } = props
 
   return (
     <svg viewBox='0 0 369.38 395.63' {...style}>
       <defs>
-
-        {/*
-        <linearGradient id="linear-gradient" x1="174.6" y1="148.46" x2="227.12" y2="395.57" gradientUnits="userSpaceOnUse">
-          <stop offset="0" stopColor="#ffd54f"/>
-          <stop offset="0.12" stopColor="#ffd246"/>
-          <stop offset="0.7" stopColor="#ffc61f"/>
-          <stop offset="1" stopColor="#ffc110"/>
-        </linearGradient>
-        <linearGradient id="linear-gradient-2" x1="0" y1="111.01" x2="369.38" y2="111.01" xlinkHref="#linear-gradient"/>
-        <linearGradient id="linear-gradient-3" x1="181.81" y1="324.7" x2="181.81" y2="369.64" gradientUnits="userSpaceOnUse">
-          <stop offset="0" stopColor="#ffc110"/>
-          <stop offset="0.41" stopColor="#febe11"/>
-          <stop offset="0.68" stopColor="#fdb614"/>
-          <stop offset="0.9" stopColor="#faa718"/>
-          <stop offset="1" stopColor="#f89e1b"/>
-        </linearGradient>
-        */}
 
         <linearGradient
           id='linear-gradient'
@@ -37,7 +22,7 @@ export default (props) => {
           gradientUnits='userSpaceOnUse'
         >
           <stop offset='0' stopColor={headColor} />
-          <stop offset='1' stopColor={headColor} />
+          <stop offset='1' stopColor={cl(headColor).darken(0.3)} />
         </linearGradient>
 
         <linearGradient
@@ -58,7 +43,7 @@ export default (props) => {
           gradientUnits='userSpaceOnUse'
         >
           <stop offset='0' stopColor='rgba(0, 0, 0, 0)' />
-          <stop offset='1' stopColor='rgba(0, 0, 0, 0.3)' />
+          <stop offset='1' stopColor='rgba(0, 0, 0, 0.15)' />
         </linearGradient>
 
       </defs>
@@ -74,7 +59,7 @@ export default (props) => {
         id='middle'
         d='M369.38,184.49c0,19.52-82.68,35.34-184.69,35.34S0,204,0,184.49s82.69-35.34,184.69-35.34S369.38,165,369.38,184.49Z'
         style={{
-          fill: headColor,
+          fill: reflectColor,
         }}
       />
       <path

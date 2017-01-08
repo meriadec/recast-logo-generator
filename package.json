@@ -34,6 +34,7 @@
     ]
   },
   "dependencies": {
+    "color": "^1.0.3",
     "compression": "^1.6.2",
     "es6-promisify": "^5.0.0",
     "express": "^4.14.0",
@@ -44,6 +45,7 @@
     "react-redux": "^4.4.6",
     "react-router": "^3.0.0",
     "react-router-redux": "^4.0.7",
+    "react-slider": "^0.7.0",
     "redial": "^0.5.0",
     "redux": "^3.6.0",
     "redux-actions": "^1.1.0",
