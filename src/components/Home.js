@@ -12,6 +12,7 @@ class Home extends Component {
     color: '#ffca2b',
     inputValue: '#ffca2b',
     fat: 1,
+    fatEyes: 1,
   }
 
   handleChangeInput (e) {
@@ -61,12 +62,17 @@ class Home extends Component {
     this.setState({ fat: v })
   }
 
+  handleChangeSizeOfEyes (v) {
+    this.setState({ fatEyes: v })
+  }
+
   render () {
 
     const {
       color,
       inputValue,
       fat,
+      fatEyes,
     } = this.state
 
     const c = cl(color)
@@ -99,6 +105,7 @@ class Home extends Component {
         <Logo
           color={color}
           fat={fat}
+          fatEyes={fatEyes}
         />
 
         <div className='controls'>
@@ -133,6 +140,16 @@ class Home extends Component {
             defaultValue={1}
             withBars
             onChange={::this.handleChangeSize}
+            step={0.01}
+          />
+
+          <Slider
+            className='horizontal-slider'
+            min={0.5}
+            max={1.5}
+            defaultValue={1}
+            withBars
+            onChange={::this.handleChangeSizeOfEyes}
             step={0.01}
           />
 

@@ -11,6 +11,7 @@ class Logo extends Component {
     const {
       color,
       fat,
+      fatEyes,
     } = this.props
 
     const c = cl(color)
@@ -35,7 +36,12 @@ class Logo extends Component {
             }}
           />
         </div>
-        <div className='Logo-eyes'>
+        <div
+          className='Logo-eyes'
+          style={{
+            transform: `scale(${fatEyes})`,
+          }}
+        >
           <LogoEyes
             color={color}
             style={{
