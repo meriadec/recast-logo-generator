@@ -1,5 +1,7 @@
 import webshot from 'webshot'
 
+import config from 'config'
+
 export default function shot (req, res) {
 
   const {
@@ -8,7 +10,7 @@ export default function shot (req, res) {
     fatEyes,
   } = req.query
 
-  const url = `http://localhost:3035/render?color=${color}&fat=${fat}&fatEyes=${fatEyes}`
+  const url = `${config.renderUrl}?color=${color}&fat=${fat}&fatEyes=${fatEyes}`
 
   const options = {
     customCSS: `
