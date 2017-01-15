@@ -28,12 +28,16 @@ body {
   align-items: center;
   justify-content: center;
 
+  &.render {
+    margin: 0;
+  }
+
   .Logo-body {
   }
 
   .Logo-eyes {
     position: absolute;
-    left: 0; right: 0; bottom: 20px;
+    left: 0; right: 0; bottom: 20%;
     display: flex;
     justify-content: center;
   }
@@ -75,4 +79,8 @@ input[type=text] {
   width: 50px;
   height: 18px;
   line-height: 48px;
+}
+
+.darender {
+  // display: flex;
 }

@@ -12,6 +12,7 @@ class Logo extends Component {
       color,
       fat,
       fatEyes,
+      render,
     } = this.props
 
     const c = cl(color)
@@ -21,7 +22,7 @@ class Logo extends Component {
       : c.lighten(0.2)
 
     return (
-      <div className='Logo'>
+      <div className={`Logo ${render ? 'render' : ''}`}>
         <div
           className='Logo-body'
           style={{
@@ -33,7 +34,8 @@ class Logo extends Component {
             headColor={color}
             reflectColor={lighten}
             style={{
-              width: 300,
+              width: render ? 300 : 300,
+              height: render ? 300 : 300,
             }}
           />
         </div>
@@ -47,7 +49,8 @@ class Logo extends Component {
           <LogoEyes
             color={color}
             style={{
-              width: 100,
+              width: render ? 100 : 100,
+              height: render ? 42 : 42,
             }}
           />
         </div>

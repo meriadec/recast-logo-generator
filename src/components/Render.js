@@ -13,9 +13,12 @@ class Render extends Component {
     }
 
     return (
-      <Logo
-        {...params}
-      />
+      <div className='darender'>
+        <Logo
+          render
+          {...params}
+        />
+      </div>
     )
   }
 

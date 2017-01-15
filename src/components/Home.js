@@ -155,6 +155,15 @@ class Home extends Component {
 
         </div>
 
+        <a
+          style={{ marginTop: 20 }}
+          target='_blank'
+          rel='noopener noreferrer'
+          href={`/shot?color=${color.substr(1)}&fat=${fat}&fatEyes=${fatEyes}`}
+        >
+          {'Download'}
+        </a>
+
       </div>
     )
   }
