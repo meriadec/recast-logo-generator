@@ -4,6 +4,8 @@ import compression from 'compression'
 import config from 'config'
 import render from 'server/render'
 
+import shot from 'server/shot'
+
 const server = express()
 
 if (config.env === 'development') {
@@ -14,6 +16,8 @@ if (config.env === 'production') {
   server.use(compression())
   server.use('/dist', express.static(config.distFolder))
 }
+
+server.get('/shot', shot)
 
 server.use('/assets', express.static(config.assetsFolder))
 server.use(render)

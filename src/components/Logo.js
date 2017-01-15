@@ -26,6 +26,7 @@ class Logo extends Component {
           className='Logo-body'
           style={{
             transform: `scaleX(${fat})`,
+            WebkitTransform: `scaleX(${fat})`,
           }}
         >
           <LogoBody
@@ -40,6 +41,7 @@ class Logo extends Component {
           className='Logo-eyes'
           style={{
             transform: `scale(${fatEyes})`,
+            WebkitTransform: `scale(${fatEyes})`,
           }}
         >
           <LogoEyes

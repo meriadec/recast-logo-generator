@@ -42,8 +42,8 @@ export default (props) => {
           y2='369.64'
           gradientUnits='userSpaceOnUse'
         >
-          <stop offset='0' stopColor='rgba(0, 0, 0, 0)' />
-          <stop offset='1' stopColor='rgba(0, 0, 0, 0.15)' />
+          <stop offset='0' stopColor={`${cl(headColor).darken(0.2)}`} />
+          <stop offset='1' stopColor={`${cl(headColor).darken(0.5)}`} />
         </linearGradient>
 
       </defs>
